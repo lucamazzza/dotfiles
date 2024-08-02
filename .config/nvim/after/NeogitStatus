@@ -1,0 +1,18 @@
+Hint: <tab> toggle | s stage | u unstage | x discard | c commit | ? help
+
+Head:     b03f413 main removed code with me
+Merge:    b03f413 origin/main removed code with me
+
+Staged changes (6)
+new file   NeogitStatus
+new file   after/NeogitStatus
+new file   after/plugin/neogit.lua
+modified   lua/lucamazza/packer.lua
+modified   lua/lucamazza/remap.lua
+modified   plugin/packer_compiled.lua
+
+Recent Commits
+b03f413 origin/main removed code with me
+c0ad5b0 Create README.md
+189f98b Full config
+
