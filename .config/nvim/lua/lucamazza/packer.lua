@@ -37,6 +37,7 @@ return require('packer').startup(function(use)
     use('NeogitOrg/neogit')
     use('sanathks/workspace.nvim')
     use('nvim-tree/nvim-web-devicons')
+    use('lervag/vimtex')
     use {
         'nvim-lualine/lualine.nvim',
         requires = { 'nvim-tree/nvim-web-devicons', opt = true }
