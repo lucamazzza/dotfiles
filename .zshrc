@@ -11,6 +11,8 @@ eval "$(/opt/homebrew/bin/brew shellenv)"
 eval "$(oh-my-posh init zsh --config ~/.config/ohmyposh/zen.json)"
 eval "$(fzf --zsh)"
 eval "$(zoxide init --cmd cd zsh)"
+eval "$(tmux attach)"
+eval "$(tmux source-file ~/.config/tmux/.tmux.conf)"
 
 zinit light zsh-users/zsh-syntax-highlighting
 zinit light zsh-users/zsh-completions
