@@ -174,6 +174,11 @@ _G.packer_plugins = {
     path = "/Users/lucamazza/.local/share/nvim/site/pack/packer/start/packer.nvim",
     url = "https://github.com/wbthomason/packer.nvim"
   },
+  ["pkl-neovim"] = {
+    loaded = true,
+    path = "/Users/lucamazza/.local/share/nvim/site/pack/packer/start/pkl-neovim",
+    url = "https://github.com/apple/pkl-neovim"
+  },
   playground = {
     loaded = true,
     path = "/Users/lucamazza/.local/share/nvim/site/pack/packer/start/playground",

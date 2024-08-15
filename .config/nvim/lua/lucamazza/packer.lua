@@ -38,10 +38,16 @@ return require('packer').startup(function(use)
     use('sanathks/workspace.nvim')
     use('nvim-tree/nvim-web-devicons')
     use('lervag/vimtex')
+    use('apple/pkl-neovim')
     use {
         'nvim-lualine/lualine.nvim',
         requires = { 'nvim-tree/nvim-web-devicons', opt = true }
     }
+    use({
+	"L3MON4D3/LuaSnip",
+    	tag = "v2.*",
+	    run = "make install_jsregexp"
+    })
     use {
 		'VonHeikemen/lsp-zero.nvim',
 		requires = {
