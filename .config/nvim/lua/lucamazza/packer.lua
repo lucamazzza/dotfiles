@@ -48,6 +48,7 @@ return require('packer').startup(function(use)
     	tag = "v2.*",
 	    run = "make install_jsregexp"
     })
+    use("goolord/alpha-nvim")
     use {
 		'VonHeikemen/lsp-zero.nvim',
 		requires = {
