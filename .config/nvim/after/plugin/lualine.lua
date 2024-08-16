@@ -2,10 +2,10 @@ vim.o.showmode = false
 require('lualine').setup {
   options = {
     component_separators = '',
-    section_separators = { left = '', right = '' },
+    section_separators = { left = '', right = '' },
   },
   sections = {
-    lualine_a = { { 'mode', separator = { left = '', right = '' }, right_padding = 2 } },
+    lualine_a = { { 'mode', separator = { left = '', right = '' }, right_padding = 2 } },
     lualine_b = { 'filename', 'branch' },
     lualine_c = {
       '%=', --[[ add your center compoentnts here in place of this comment ]]
@@ -13,7 +13,7 @@ require('lualine').setup {
     lualine_x = {},
     lualine_y = { 'filetype', 'diagnostics' },
     lualine_z = {
-      { 'location', separator = { left = '', right = '' }, left_padding = 2 },
+      { 'location', separator = { left = '', right = '' }, left_padding = 2 },
     },
   },
   inactive_sections = {
@@ -27,5 +27,8 @@ require('lualine').setup {
   tabline = {},
   extensions = {
     'quickfix',
+    'fzf',
+    'mason',
+    'fugitive',
   },
 }

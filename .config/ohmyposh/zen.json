@@ -8,27 +8,27 @@
         {
           "background": "#ffffff",
           "foreground": "#000000",
-          "leading_diamond": "\ue0b6",
+          "leading_diamond": "",
           "style": "diamond",
           "template": " {{ if .WSL }}WSL at {{ end }}{{.Icon}} ",
-          "trailing_diamond": "\ue0b4",
+          "trailing_diamond": " ",
           "type": "os"
         },
         {
           "background": "#84cad4",
           "foreground": "#000000",
-          "powerline_symbol": "\ue0b4",
+          "powerline_symbol": "",
           "properties": {
             "style": "full"
           },
           "style": "powerline",
-          "template": " \uf0e7 ",
+          "template": "",
           "type": "root"
         },
         {
           "background": "#84cad4",
           "foreground": "#000000",
-          "powerline_symbol": "\ue0b4",
+          "powerline_symbol": "",
           "properties": {
             "style": "full"
           },
@@ -39,7 +39,7 @@
         {
           "background": "#f1b1b1",
           "foreground": "#000000",
-          "powerline_symbol": "\ue0b4",
+          "powerline_symbol": "",
           "style": "powerline",
           "template": " {{ .HEAD }}{{ if or (.Working.Changed) (.Staging.Changed)}}*{{ end }} {{ if gt .Behind 0}}⇣{{end}}{{ if gt .Ahead 0}}⇡{{end}}",
           "type": "git",
@@ -56,8 +56,8 @@
         {
             "type": "executiontime",
             "style": "diamond",
-            "trailing_diamond": "\ue0b4",
-            "leading_diamond": "\ue0b6",
+            "trailing_diamond": "",
+            "leading_diamond": "",
             "foreground": "#000000",
             "background": "#ffffff",
             "template": " {{ .FormattedMs }} ", 
@@ -75,7 +75,7 @@
       "newline": true,
       "segments": [
         {
-          "foreground": "#D4E157",
+          "foreground": "#808080",
           "foreground_templates": [
             "{{ if gt .Code 0 }}#FF5252{{ end }}"
           ],
@@ -83,22 +83,22 @@
             "always_enabled": true
           },
           "style": "plain",
-          "template": "\u276f ",
+          "template": "=> ",
           "type": "status"
         }
       ],
       "type": "prompt"
     }
   ],
-  "transient_prompt": {
-    "background": "transparent",
-    "foreground": "#D4E157",
-    "template": "\u276f "
-  },
   "secondary_prompt": {
     "background": "transparent",
-    "foreground": "#D4E157",
-    "template": "\u276f\u276f "
+    "foreground": "#808080",
+    "template": "=>> "
+  },
+  "transient_prompt": {
+    "background": "transparent",
+    "foreground": "#808080",
+    "template": "=> "
   },
   "version": 2
 }
