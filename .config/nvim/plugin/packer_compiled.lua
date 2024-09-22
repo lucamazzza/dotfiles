@@ -49,8 +49,8 @@ local function save_profiles(threshold)
 end
 
 time([[Luarocks path setup]], true)
-local package_path_str = "/Users/lucamazza/.cache/nvim/packer_hererocks/2.1.1720049189/share/lua/5.1/?.lua;/Users/lucamazza/.cache/nvim/packer_hererocks/2.1.1720049189/share/lua/5.1/?/init.lua;/Users/lucamazza/.cache/nvim/packer_hererocks/2.1.1720049189/lib/luarocks/rocks-5.1/?.lua;/Users/lucamazza/.cache/nvim/packer_hererocks/2.1.1720049189/lib/luarocks/rocks-5.1/?/init.lua"
-local install_cpath_pattern = "/Users/lucamazza/.cache/nvim/packer_hererocks/2.1.1720049189/lib/lua/5.1/?.so"
+local package_path_str = "/Users/lucamazza/.cache/nvim/packer_hererocks/2.1.1725453128/share/lua/5.1/?.lua;/Users/lucamazza/.cache/nvim/packer_hererocks/2.1.1725453128/share/lua/5.1/?/init.lua;/Users/lucamazza/.cache/nvim/packer_hererocks/2.1.1725453128/lib/luarocks/rocks-5.1/?.lua;/Users/lucamazza/.cache/nvim/packer_hererocks/2.1.1725453128/lib/luarocks/rocks-5.1/?/init.lua"
+local install_cpath_pattern = "/Users/lucamazza/.cache/nvim/packer_hererocks/2.1.1725453128/lib/lua/5.1/?.so"
 if not string.find(package.path, package_path_str, 1, true) then
   package.path = package.path .. ';' .. package_path_str
 end
@@ -153,6 +153,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/lucamazza/.local/share/nvim/site/pack/packer/start/neogit",
     url = "https://github.com/NeogitOrg/neogit"
+  },
+  ["notebook.nvim"] = {
+    loaded = true,
+    path = "/Users/lucamazza/.local/share/nvim/site/pack/packer/start/notebook.nvim",
+    url = "https://github.com/meatballs/notebook.nvim"
   },
   ["nvim-cmp"] = {
     loaded = true,

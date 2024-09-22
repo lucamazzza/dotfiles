@@ -39,6 +39,7 @@ return require('packer').startup(function(use)
     use('nvim-tree/nvim-web-devicons')
     use('lervag/vimtex')
     use('apple/pkl-neovim')
+    use('meatballs/notebook.nvim')
     use {
         'nvim-lualine/lualine.nvim',
         requires = { 'nvim-tree/nvim-web-devicons', opt = true }
