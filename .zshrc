@@ -43,5 +43,6 @@ zstyle ':fzf-tab:complete:__zoxide_z:*' fzf-preview 'ls --color $realpath'
 
 # ls always displays in color
 alias ls='ls --color'
+alias gccw='gcc -Wall -Wextra'
 
 zinit cdreplay -q
