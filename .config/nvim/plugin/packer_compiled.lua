@@ -154,11 +154,6 @@ _G.packer_plugins = {
     path = "/Users/lucamazza/.local/share/nvim/site/pack/packer/start/neogit",
     url = "https://github.com/NeogitOrg/neogit"
   },
-  ["notebook.nvim"] = {
-    loaded = true,
-    path = "/Users/lucamazza/.local/share/nvim/site/pack/packer/start/notebook.nvim",
-    url = "https://github.com/meatballs/notebook.nvim"
-  },
   ["nvim-cmp"] = {
     loaded = true,
     path = "/Users/lucamazza/.local/share/nvim/site/pack/packer/start/nvim-cmp",
