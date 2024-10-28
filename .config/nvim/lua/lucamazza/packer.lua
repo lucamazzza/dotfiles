@@ -38,6 +38,7 @@ return require('packer').startup(function(use)
     use('sanathks/workspace.nvim')
     use('nvim-tree/nvim-web-devicons')
     use('lervag/vimtex')
+    use('rbong/vim-flog')
     use('apple/pkl-neovim')
     use {
         'nvim-lualine/lualine.nvim',
