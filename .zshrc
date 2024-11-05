@@ -46,3 +46,12 @@ alias ls='ls --color'
 alias gcc='gcc -Wall -Wextra'
 
 zinit cdreplay -q
+
+# >>> juliaup initialize >>>
+
+# !! Contents within this block are managed by juliaup !!
+
+path=('/Users/lucamazza/.juliaup/bin' $path)
+export PATH
+
+# <<< juliaup initialize <<<
