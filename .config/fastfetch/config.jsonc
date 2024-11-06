@@ -1,34 +1,105 @@
 {
-  "$schema": "https://github.com/fastfetch-cli/fastfetch/raw/dev/doc/json_schema.json",
-  "modules": [
-    "title",
-    "separator",
-    "os",
-    "host",
-    "kernel",
-    "uptime",
-    "packages",
-    "shell",
-    "display",
-    "de",
-    "wm",
-    "wmtheme",
-    "theme",
-    "icons",
-    //"font",
-    "cursor",
-    "terminal",
-    "terminalfont",
-    "cpu",
-    "gpu",
-    "memory",
-    //"swap",
-    "disk",
-    "localip",
-    "battery",
-    //"poweradapter",
-    //"locale",
-    "break",
-    "colors"
-  ]
+    "$schema": "https://github.com/fastfetch-cli/fastfetch/raw/dev/doc/json_schema.json",
+    "logo": {
+        "padding": {
+            "top":      2,
+            "left":     1,
+            "right":    2
+        },
+        "type":         "iterm",
+        "source":       "apple.png",
+    },
+    "display": {
+        "separator":    "       "
+    },
+    "modules": [
+        {
+            "type":     "title",
+            "format":   "{#1}╭───────────── {#}{user-name-colored}"
+        },
+        // SYSTEM INFO
+        {
+            "type":     "custom",
+            "format":   "{#1}│ {#}SYSINFO" 
+        },
+        {
+            "type":     "os",
+            "key":      "{#separator}│  {#keys}󰍹" 
+        },
+        {
+            "type":     "kernel",
+            "key":      "{#separator}│  {#keys}󰒋" 
+        },
+        {
+            "type":     "uptime",
+            "key":      "{#separator}│  {#keys}󰅐" 
+        },
+        {
+            "type":     "packages",
+            "key":      "{#separator}│  {#keys}󰏖",
+            "format":   "{all}"
+        },
+        // DESKTOP ENVIRONMENT
+        {
+            "type":     "custom",
+            "format":   "{#1}│ {#}DENV"
+        },
+        {
+            "type":     "de",
+            "key":      "{#separator}│  {#keys}󰧨"
+        },
+        {
+            "type":     "wm",
+            "key":      "{#separator}│  {#keys}󱂬"
+        },
+        {
+            "type":     "wmtheme",
+            "key":      "{#separator}│  {#keys}󰉼"
+        },
+        {
+            "type":     "display",
+            "key":      "{#separator}│  {#keys}󰹑"
+        },
+        {
+            "type":     "shell",
+            "key":      "{#separator}│  {#keys}󰞷"
+        },
+        {
+            "type":     "terminalfont",
+            "key":      "{#separator}│  {#keys}󰛖"
+        },
+        // HARDWARE INFORMATION
+        {
+            "type":     "custom",
+            "format":   "{#1}│ {#}HWINFO"
+        },
+        {
+            "type":     "cpu",
+            "key":      "{#separator}│  {#keys}󰻠"
+        },
+        {
+            "type":     "gpu",
+            "key":      "{#separator}│  {#keys}󰢮"
+        },
+        {
+            "type":     "memory",
+            "key":      "{#separator}│  {#keys}󰍛"
+        },
+        {
+            "type":     "disk",
+            "key":      "{#separator}│  {#keys}󰋊",
+            "folders":  "/"
+        },
+        // COLORS
+        {
+            "type":     "colors",
+            "key":      "{#separator}│",
+            "symbol":   "circle"
+        },
+        // FOOTER
+        {
+            "type":     "custom",
+            "format":   "{#1}╰───────────────────────────────╯"
+        }
+    ]
 }
