@@ -1,104 +1,97 @@
 {
   "$schema": "https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh/main/themes/schema.json",
+  "secondary_prompt": {
+    "template": "=>> ",
+    "foreground": "#808080",
+    "background": "transparent"
+  },
+  "transient_prompt": {
+    "template": "=> ",
+    "foreground": "#808080",
+    "background": "transparent"
+  },
   "blocks": [
     {
+      "type": "prompt",
       "alignment": "left",
-      "newline" : true,
       "segments": [
         {
-          "background": "#ffffff",
-          "foreground": "#000000",
-          "leading_diamond": "",
           "style": "diamond",
-          "template": " {{ if .WSL }}WSL at {{ end }}{{.Icon}} ",
           "trailing_diamond": " ",
+          "template": " {{ if .WSL }}WSL at {{ end }}{{.Icon}} ",
+          "foreground": "#191724",
+          "background": "#e0def4",
           "type": "os"
         },
         {
-          "background": "#84cad4",
-          "foreground": "#000000",
-          "powerline_symbol": "",
           "properties": {
             "style": "full"
           },
           "style": "powerline",
-          "template": "",
+          "foreground": "#191724",
+          "background": "#9ccfd8",
           "type": "root"
         },
         {
-          "background": "#84cad4",
-          "foreground": "#000000",
-          "powerline_symbol": "",
           "properties": {
             "style": "full"
           },
           "style": "powerline",
           "template": " {{ .Path }} ",
+          "foreground": "#191724",
+          "background": "#9ccfd8",
           "type": "path"
         },
         {
-          "background": "#f1b1b1",
-          "foreground": "#000000",
-          "powerline_symbol": "",
-          "style": "powerline",
-          "template": " {{ .HEAD }}{{ if or (.Working.Changed) (.Staging.Changed)}}*{{ end }} {{ if gt .Behind 0}}⇣{{end}}{{ if gt .Ahead 0}}⇡{{end}}",
-          "type": "git",
           "properties": {
             "fetch_status": true
-          }
+          },
+          "style": "powerline",
+          "template": " {{ .HEAD }}{{ if or (.Working.Changed) (.Staging.Changed)}}*{{ end }} {{ if gt .Behind 0}}\u21e3{{end}}{{ if gt .Ahead 0}}\u21e1{{end}}",
+          "foreground": "#000000",
+          "background": "#ebbcba",
+          "type": "git"
         }
       ],
-      "type": "prompt"
+      "newline": true
     },
     {
+      "type": "prompt",
       "alignment": "right",
       "segments": [
         {
-            "type": "executiontime",
-            "style": "diamond",
-            "trailing_diamond": "",
-            "leading_diamond": "",
-            "foreground": "#000000",
-            "background": "#ffffff",
-            "template": " {{ .FormattedMs }} ", 
-            "properties": {
-                "threshold": 500,
-                "style": "austin",
-                "always_enabled": true
-            }
+          "properties": {
+            "always_enabled": true,
+            "style": "austin",
+            "threshold": 500
+          },
+          "style": "diamond",
+          "template": " {{ .FormattedMs }} ",
+          "foreground": "#191724",
+          "background": "#e0def4",
+          "type": "executiontime"
         }
-      ],
-      "type": "prompt"
+      ]
     },
     {
+      "type": "prompt",
       "alignment": "left",
-      "newline": true,
       "segments": [
         {
-          "foreground": "#808080",
-          "foreground_templates": [
-            "{{ if gt .Code 0 }}#FF5252{{ end }}"
-          ],
           "properties": {
             "always_enabled": true
           },
           "style": "plain",
           "template": "=> ",
-          "type": "status"
+          "foreground": "#c4a7e7",
+          "type": "status",
+          "foreground_templates": [
+            "{{ if gt .Code 0 }}#eb6f92{{ end }}"
+          ]
         }
       ],
-      "type": "prompt"
+      "newline": true
     }
   ],
-  "secondary_prompt": {
-    "background": "transparent",
-    "foreground": "#808080",
-    "template": "=>> "
-  },
-  "transient_prompt": {
-    "background": "transparent",
-    "foreground": "#808080",
-    "template": "=> "
-  },
-  "version": 2
+  "version": 3
 }
