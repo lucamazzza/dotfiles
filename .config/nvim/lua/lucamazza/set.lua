@@ -31,3 +31,7 @@ vim.opt.updatetime = 50
 vim.opt.colorcolumn = "120"
 
 vim.g.mapleader = " "
+
+-- Undercurl
+vim.cmd([[let &t_Cs = "\e[4:3m"]])
+vim.cmd([[let &t_Ce = "\e[4:0m"]])

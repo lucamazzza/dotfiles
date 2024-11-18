@@ -28,14 +28,14 @@ sketchybar --add item left_anchor left --set left_anchor width=0 \
 # If you are looking for other colors, see the color picker:
 # https://felixkratz.github.io/SketchyBar/config/tricks#color-picker
 
-sketchybar --bar height=37        \
+sketchybar --bar height=27        \
                  blur_radius=30   \
                  position=top     \
                  sticky=on        \
-                 padding_left=10  \
-                 padding_right=10 \
+                 padding_left=5  \
+                 padding_right=5 \
                  margin=10        \
-                 y_offset=10      \
+                 y_offset=5      \
                  corner_radius=25 \
                  color=$BAR_COLOR
 

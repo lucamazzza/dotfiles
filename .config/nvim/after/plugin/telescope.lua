@@ -6,5 +6,11 @@ vim.keymap.set('n', '<leader>ps', function()
   builtin.grep_string({search = vim.fn.input("Grep > ")});
 end)
 vim.keymap.set('n', '<leader>t', builtin.builtin, { desc = 'Telescope' })
+vim.keymap.set('n', '<leader>dd', builtin.diagnostics, { desc = 'Telescope diagnostics'})
 vim.keymap.set('n', '<leader>pb', builtin.buffers, { desc = 'Telescope buffers' })
 
+local signs = { Error = "X", Warn = "!", Hint = "?", Info = "i" }
+for type, icon in pairs(signs) do
+  local hl = "DiagnosticSign" .. type
+  vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = hl })
+end
