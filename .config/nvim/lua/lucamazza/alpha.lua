@@ -22,16 +22,16 @@ dashboard.section.header.val = {
 }
 
  dashboard.section.buttons.val = {
-   dashboard.button("<leader>pf", " Find file", ":Telescope find_files <CR>"),
-   dashboard.button("<leader>n", "󰈢 New file", ":ene <BAR> startinsert <CR>"),
-   dashboard.button("<leader>rf", "󰈢 Recently used files", ":Telescope oldfiles <CR>"),
-   dashboard.button("<leader>ps", "󰈬 Find text", ":Telescope live_grep <CR>"),
-   dashboard.button("<C-p>", " Git files", ":Telescope git_files <CR>"),
-   dashboard.button("<leader>q", "󰗼 Quit Neovim", ":qa<CR>"),
+   dashboard.button("<leader>pf", "􀕹  Find file", ":Telescope find_files <CR>"),
+   dashboard.button("<leader>n", "􀣘  New file", ":ene <BAR> startinsert <CR>"),
+   dashboard.button("<leader>rf", "􀫿  Recently used files", ":Telescope oldfiles <CR>"),
+   dashboard.button("<leader>ps", "􀉀  Find text", ":Telescope live_grep <CR>"),
+   dashboard.button("<C-p>", "􀙡  Git files", ":Telescope git_files <CR>"),
+   dashboard.button("<leader>q", "􀷄  Quit Neovim", ":qa<CR>"),
 }
 
 local function footer()
-    return os.date " %d-%m-%Y   %H:%M"
+    return os.date "􀉉  %d-%m-%Y  􀐬  %H:%M"
 end
 
 dashboard.section.footer.val = footer()
