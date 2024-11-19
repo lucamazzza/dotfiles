@@ -35,12 +35,14 @@ local mode_map = {
     ['t']   = '􀩼 ',
 }
 
+local custom_rosepine = require'lualine.themes.rose-pine'
 
 vim.o.showmode = false
 require('lualine').setup {
     options = {
         component_separators = '',
         section_separators = { left = '', right = '' },
+        theme = custom_rosepine
     },
     sections = {
         lualine_a = {
@@ -52,9 +54,7 @@ require('lualine').setup {
             }
         },
         lualine_b = { 'filename', 'branch' },
-        lualine_c = {
-            '%=', --[[ add your center compoentnts here in place of this comment ]]
-        },
+        lualine_c = {},
         lualine_x = {},
         lualine_y = {
             'filetype',
