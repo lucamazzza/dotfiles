@@ -26,6 +26,7 @@ return require('packer').startup(function(use)
     use('yamatsum/nvim-cursorline')
     use('CRAG666/code_runner.nvim')
     use('saecki/crates.nvim')
+    use('folke/lsp-colors.nvim')
     use({
         'folke/todo-comments.nvim',
         requires = { 'nvim-lua/plenary.nvim' }

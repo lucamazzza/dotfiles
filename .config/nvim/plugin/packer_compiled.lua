@@ -159,6 +159,11 @@ _G.packer_plugins = {
     path = "/Users/lucamazza/.local/share/nvim/site/pack/packer/start/harpoon",
     url = "https://github.com/theprimeagen/harpoon"
   },
+  ["lsp-colors.nvim"] = {
+    loaded = true,
+    path = "/Users/lucamazza/.local/share/nvim/site/pack/packer/start/lsp-colors.nvim",
+    url = "https://github.com/folke/lsp-colors.nvim"
+  },
   ["lsp-zero.nvim"] = {
     loaded = true,
     path = "/Users/lucamazza/.local/share/nvim/site/pack/packer/start/lsp-zero.nvim",
