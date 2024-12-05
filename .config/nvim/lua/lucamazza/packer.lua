@@ -28,6 +28,13 @@ return require('packer').startup(function(use)
     use('saecki/crates.nvim')
     use('folke/lsp-colors.nvim')
     use({
+        "elmcgill/springboot-nvim",
+        requires = {
+            "neovim/nvim-lspconfig",
+            "mfussenegger/nvim-jdtls"
+        }
+    })
+    use({
         'folke/todo-comments.nvim',
         requires = { 'nvim-lua/plenary.nvim' }
     })
@@ -48,7 +55,7 @@ return require('packer').startup(function(use)
             "hrsh7th/nvim-cmp",
         },
         run = function()
-            require'springtime.core'.update()
+            require 'springtime.core'.update()
         end,
     })
     use({
