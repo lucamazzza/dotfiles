@@ -41,6 +41,17 @@ return require('packer').startup(function(use)
         requires = { 'nvim-lua/plenary.nvim' }
     })
     use({
+        'javiorfo/nvim-springtime',
+        requires = {
+            "javiorfo/nvim-popcorn",
+            "javiorfo/nvim-spinetta",
+            "hrsh7th/nvim-cmp",
+        },
+        run = function()
+            require'springtime.core'.update()
+        end,
+    })
+    use({
         'craftzdog/solarized-osaka.nvim',
         as = 'solarized-osaka',
         config = function()
