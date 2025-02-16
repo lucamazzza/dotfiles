@@ -27,7 +27,7 @@ require("springtime").setup({
         },
         java_version = {
             selected = 1,
-            values = {23, 22, 17}
+            values = {23, 21, 17}
         }
     },
     dialog = {
