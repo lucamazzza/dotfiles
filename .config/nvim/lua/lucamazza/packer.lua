@@ -27,6 +27,7 @@ return require('packer').startup(function(use)
     use('CRAG666/code_runner.nvim')
     use('saecki/crates.nvim')
     use('folke/lsp-colors.nvim')
+    use {"folke/which-key.nvim" }
     use({
         "elmcgill/springboot-nvim",
         requires = {
