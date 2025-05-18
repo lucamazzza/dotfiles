@@ -43,7 +43,13 @@ zstyle ':fzf-tab:complete:__zoxide_z:*' fzf-preview 'ls --color $realpath'
 
 # ls always displays in color
 alias ls='ls --color'
+alias ll='ls -la --color'
 alias gcc='gcc -Wall -Wextra'
+alias gst='git status -s'
+alias tree='tree -C'
+alias cm="mkdir -p build && cd build && cmake .. && make && cd .."
+alias cmclean="mkdir -p build && cd build && make clean && cd .."
+
 
 zinit cdreplay -q
 
@@ -53,6 +59,7 @@ zinit cdreplay -q
 
 path=('/Users/lucamazza/.juliaup/bin' $path)
 export PATH
+export PATH=$PATH:/Users/yourusername/homebrew/bin
 
 # <<< juliaup initialize <<<
 

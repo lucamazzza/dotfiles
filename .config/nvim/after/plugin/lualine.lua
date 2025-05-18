@@ -35,14 +35,14 @@ local mode_map = {
     ['t']   = '􀩼 ',
 }
 
-local custom_kanagawa = require'lualine.themes.rose-pine'
+local custom_rosepine = require'lualine.themes.rose-pine'
 
 vim.o.showmode = false
 require('lualine').setup {
     options = {
         component_separators = '',
         section_separators = { left = '', right = '' },
-        theme = custom_kanagawa
+        theme = custom_rosepine
     },
     sections = {
         lualine_a = {
@@ -66,7 +66,7 @@ require('lualine').setup {
         lualine_z = {
             {
                 'location',
-                separator = { left = '', right = '' },
+                separator = { left = '', right = ' ' },
                 left_padding = 2
             },
         },
