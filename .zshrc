@@ -41,7 +41,6 @@ zstyle ':completion:*' menu no
 zstyle ':fzf-tab:complete:cd:*' fzf-preview 'ls --color $realpath'
 zstyle ':fzf-tab:complete:__zoxide_z:*' fzf-preview 'ls --color $realpath'
 
-# ls always displays in color
 alias ls='ls --color'
 alias ll='ls -la --color'
 alias gcc='gcc -Wall -Wextra'
@@ -49,7 +48,6 @@ alias gst='git status -s'
 alias tree='tree -C'
 alias cm="mkdir -p build && cd build && cmake .. && make && cd .."
 alias cmclean="mkdir -p build && cd build && make clean && cd .."
-
 
 zinit cdreplay -q
 
@@ -59,8 +57,8 @@ zinit cdreplay -q
 
 path=('/Users/lucamazza/.juliaup/bin' $path)
 export PATH
-export PATH=$PATH:/Users/yourusername/homebrew/bin
-
+export PATH=$PATH:/Users/lucamazza/homebrew/bin
+export PATH="/opt/homebrew/opt/imagemagick/bin:$PATH"
 # <<< juliaup initialize <<<
 
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
@@ -82,6 +80,7 @@ fi
 unset __conda_setup
 # <<< conda initialize <<<
 
+<<<<<<< HEAD
 
 # pnpm
 export PNPM_HOME="/Users/lucamazza/Library/pnpm"
@@ -90,3 +89,11 @@ case ":$PATH:" in
   *) export PATH="$PNPM_HOME:$PATH" ;;
 esac
 # pnpm end
+=======
+# The following lines have been added by Docker Desktop to enable Docker CLI completions.
+fpath=(/Users/lucamazza/.docker/completions $fpath)
+autoload -Uz compinit
+compinit
+# End of Docker CLI completions
+
+>>>>>>> 773b49ff4e20c6004f19c38cb39ad699b4ad3d4f
