@@ -27,7 +27,7 @@ return require('packer').startup(function(use)
     use('CRAG666/code_runner.nvim')
     use('saecki/crates.nvim')
     use('folke/lsp-colors.nvim')
-    use {"folke/which-key.nvim" }
+    use { "folke/which-key.nvim" }
     use({
         "elmcgill/springboot-nvim",
         requires = {
@@ -119,6 +119,15 @@ return require('packer').startup(function(use)
             -- Snippets
             { 'L3MON4D3/LuaSnip' },
             { 'rafamadriz/friendly-snippets' },
+        }
+    })
+    use({
+        "nvim-neo-tree/neo-tree.nvim",
+        branch = "v3.x",
+        requires = {
+            "nvim-lua/plenary.nvim",
+            "MunifTanjim/nui.nvim",
+            "nvim-tree/nvim-web-devicons", -- optional, but recommended
         }
     })
 end)

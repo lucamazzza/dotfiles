@@ -7,6 +7,7 @@ require('mason').setup({})
 require('mason-lspconfig').setup({
     ensure_installed = {
         'eslint',
+        'clangd',
         'lua_ls',
         'rust_analyzer',
     },
