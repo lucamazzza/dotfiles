@@ -80,8 +80,6 @@ fi
 unset __conda_setup
 # <<< conda initialize <<<
 
-<<<<<<< HEAD
-
 # pnpm
 export PNPM_HOME="/Users/lucamazza/Library/pnpm"
 case ":$PATH:" in
@@ -89,11 +87,4 @@ case ":$PATH:" in
   *) export PATH="$PNPM_HOME:$PATH" ;;
 esac
 # pnpm end
-=======
-# The following lines have been added by Docker Desktop to enable Docker CLI completions.
-fpath=(/Users/lucamazza/.docker/completions $fpath)
-autoload -Uz compinit
-compinit
-# End of Docker CLI completions
 
->>>>>>> 773b49ff4e20c6004f19c38cb39ad699b4ad3d4f
