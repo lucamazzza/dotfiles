@@ -48,6 +48,10 @@ alias gst='git status -s'
 alias tree='tree -C'
 alias cm="mkdir -p build && cd build && cmake .. && make && cd .."
 alias cmclean="mkdir -p build && cd build && make clean && cd .."
+alias copilot="copilot --banner"
+alias bgls="open \"https://gitlab-edu.supsi.ch\""
+alias byt="open \"https://youtube.com\""
+alias bic="open \"https://icorsi.ch\""
 
 zinit cdreplay -q
 
@@ -87,4 +91,3 @@ case ":$PATH:" in
   *) export PATH="$PNPM_HOME:$PATH" ;;
 esac
 # pnpm end
-

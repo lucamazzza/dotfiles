@@ -32,3 +32,6 @@ vim.keymap.set("n", "<leader>k", "<cmd>cnext<CR>zz", { desc="Next error" })
 vim.keymap.set("n", "<leader>j", "<cmd>cprev<CR>zz", { desc="Prev error" })
 
 vim.keymap.set("n", "<leader>sr", ":%s/\\<<C-r><C-w>\\>/<C-r><C-w>/gI<Left><Left><Left>", { desc="Search/Replace" })
+
+vim.keymap.set("n", "<leader>mk", "<cmd>make<CR>", { desc="make" })
+vim.keymap.set("n", "<leader>cm", "<cmd>cm<CR>", { desc="cmake" })
