@@ -13,9 +13,32 @@ require("lazy").setup({
         config = function() require('lucamazza.alpha') end
     },
     {
-      'nvim-treesitter/nvim-treesitter',
-      lazy = false,
-      build = ':TSUpdate'
+        'nvim-treesitter/nvim-treesitter',
+        branch = 'master',
+        lazy = false,
+        build = ':TSUpdate',
+        event = { "BufReadPre", "BufNewFile" },
+        opts = {
+            ensure_installed = { 'bash', 'c', 'cpp', 'html', 'lua', 'markdown', 'markdown_inline', 'vim', 'vimdoc', 'java', 'query' },
+            auto_install = true,
+            incremental_selection = {
+                enable = true,
+                keymaps = {
+                    init_selection = "<C-space>",
+                    node_incremental = "<C-space>",
+                    scope_incremental = false,
+                    node_decremental = "<bs>",
+                },
+            },
+            highlight = {
+                enable = true,
+                additional_vim_regex_highlighting = false,
+            },
+            indent = { enable = true },
+        },
+        config = function(_, opts)
+            require('nvim-treesitter.configs').setup(opts)
+        end
     },
     {
         'nvim-lualine/lualine.nvim',
@@ -174,13 +197,17 @@ require("lazy").setup({
     },
     {
         'nvim-telescope/telescope.nvim',
-        tag = '0.1.8',
         dependencies = { 'nvim-lua/plenary.nvim' },
         config = function()
             local builtin = require('telescope.builtin')
             vim.keymap.set('n', '<leader>pf', builtin.find_files)
             vim.keymap.set('n', '<C-p>', builtin.git_files)
-            -- Restoring diagnostic icons
+            require('telescope').setup({
+                defaults = {
+                    file_previewer = require("telescope.previewers").vim_buffer_cat.new,
+                    grep_previewer = require("telescope.previewers").vim_buffer_vimgrep.new,
+                }
+            })
             local signs = { Error = "􀘰 ", Warn = "􀇿 ", Hint = "􁇗 ", Info = "􁊈 " }
             for type, icon in pairs(signs) do
                 local hl = "DiagnosticSign" .. type
@@ -198,7 +225,7 @@ require("lazy").setup({
             }
         end
     },
-    { 'prichrd/netrw.nvim',      config = true },
+    { 'prichrd/netrw.nvim',          config = true },
     {
         "nvim-neo-tree/neo-tree.nvim",
         branch = "v3.x",
@@ -212,7 +239,7 @@ require("lazy").setup({
         end
     },
     { 'roobert/search-replace.nvim', config = true },
-    { 'folke/todo-comments.nvim',    dependencies = { 'nvim-lua/plenary.nvim' }, config = true },
+    { 'folke/todo-comments.nvim',    dependencies = { 'nvim-lua/plenary.nvim' },                                      config = true },
     { 'mbbill/undotree',             config = function() vim.keymap.set("n", "<leader>u", vim.cmd.UndotreeToggle) end },
     { 'lewis6991/gitsigns.nvim',     config = true },
     { 'j-hui/fidget.nvim',           config = true },
@@ -225,12 +252,12 @@ require("lazy").setup({
         end
     },
     {
-    'MeanderingProgrammer/render-markdown.nvim',
-    dependencies = { 'nvim-treesitter/nvim-treesitter', 'nvim-mini/mini.nvim' },            -- if you use the mini.nvim suite
-    -- dependencies = { 'nvim-treesitter/nvim-treesitter', 'nvim-mini/mini.icons' },        -- if you use standalone mini plugins
-    -- dependencies = { 'nvim-treesitter/nvim-treesitter', 'nvim-tree/nvim-web-devicons' }, -- if you prefer nvim-web-devicons
-    ---@module 'render-markdown'
-    ---@type render.md.UserConfig
-    opts = {},
+        'MeanderingProgrammer/render-markdown.nvim',
+        dependencies = { 'nvim-treesitter/nvim-treesitter', 'nvim-mini/mini.nvim' }, -- if you use the mini.nvim suite
+        -- dependencies = { 'nvim-treesitter/nvim-treesitter', 'nvim-mini/mini.icons' },        -- if you use standalone mini plugins
+        -- dependencies = { 'nvim-treesitter/nvim-treesitter', 'nvim-tree/nvim-web-devicons' }, -- if you prefer nvim-web-devicons
+        ---@module 'render-markdown'
+        ---@type render.md.UserConfig
+        opts = {},
     },
 })
