@@ -13,22 +13,9 @@ require("lazy").setup({
         config = function() require('lucamazza.alpha') end
     },
     {
-        'nvim-treesitter/nvim-treesitter',
-        build = ':TSUpdate',
-        event = { "BufReadPre", "BufNewFile" }, -- Only load when opening a file
-        config = function()
-            -- Protected call: If this fails, it won't crash Neovim
-            local status_ok, configs = pcall(require, "nvim-treesitter.configs")
-            if not status_ok then
-                return
-            end
-
-            configs.setup({
-                ensure_installed = { "c", "rust", "java", "go", "lua", "vim", "vimdoc", "query", "markdown", "markdown_inline" },
-                highlight = { enable = true, additional_vim_regex_highlighting = false },
-                auto_install = true,
-            })
-        end
+      'nvim-treesitter/nvim-treesitter',
+      lazy = false,
+      build = ':TSUpdate'
     },
     {
         'nvim-lualine/lualine.nvim',
@@ -236,5 +223,14 @@ require("lazy").setup({
         config = function()
             vim.cmd('colorscheme rose-pine')
         end
+    },
+    {
+    'MeanderingProgrammer/render-markdown.nvim',
+    dependencies = { 'nvim-treesitter/nvim-treesitter', 'nvim-mini/mini.nvim' },            -- if you use the mini.nvim suite
+    -- dependencies = { 'nvim-treesitter/nvim-treesitter', 'nvim-mini/mini.icons' },        -- if you use standalone mini plugins
+    -- dependencies = { 'nvim-treesitter/nvim-treesitter', 'nvim-tree/nvim-web-devicons' }, -- if you prefer nvim-web-devicons
+    ---@module 'render-markdown'
+    ---@type render.md.UserConfig
+    opts = {},
     },
 })
