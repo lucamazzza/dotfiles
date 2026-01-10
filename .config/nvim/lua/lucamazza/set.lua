@@ -1,4 +1,4 @@
-vim.opt.guicursor = ""
+vim.opt.guicursor = "n-v-c:block,i-ci-ve:ver25,r-cr:hor20"
 vim.opt.nu = true
 vim.opt.relativenumber = true
 vim.opt.tabstop = 4
@@ -19,6 +19,17 @@ vim.opt.signcolumn = "yes"
 vim.opt.isfname:append("@-@")
 vim.opt.updatetime = 50
 vim.opt.colorcolumn = "120"
+vim.opt.cursorline = true
+vim.opt.mouse = "a"
+vim.opt.list = true -- Enable list mode to show invisible characters
+vim.opt.listchars = {
+  tab = '» ',
+  trail = '·',
+  nbsp = '␣'
+}
+vim.opt.autochdir = false
+vim.opt.autoindent = true
+
 
 vim.g.mapleader = " "
 

@@ -202,6 +202,14 @@ require("lazy").setup({
             local builtin = require('telescope.builtin')
             vim.keymap.set('n', '<leader>pf', builtin.find_files)
             vim.keymap.set('n', '<C-p>', builtin.git_files)
+            vim.keymap.set('n', '<leader>pg', builtin.live_grep)
+            vim.keymap.set('n', '<leader>ps', function()
+                builtin.grep_string({ search = vim.fn.input("Grep > ") });
+            end, { desc = "Grep string" })
+            vim.keymap.set("n", "<leader>Y", "\"+Y", { desc = "Copy to + reg" })
+            vim.keymap.set('n', '<leader>t', builtin.builtin, { desc = 'Telescope' })
+            vim.keymap.set('n', '<leader>dd', builtin.diagnostics, { desc = 'Telescope diagnostics' })
+            vim.keymap.set('n', '<leader>pb', builtin.buffers, { desc = 'Telescope buffers' })
             require('telescope').setup({
                 defaults = {
                     file_previewer = require("telescope.previewers").vim_buffer_cat.new,
@@ -225,7 +233,7 @@ require("lazy").setup({
             }
         end
     },
-    { 'prichrd/netrw.nvim',          config = true },
+    { 'prichrd/netrw.nvim',       config = true },
     {
         "nvim-neo-tree/neo-tree.nvim",
         branch = "v3.x",
@@ -238,12 +246,11 @@ require("lazy").setup({
             })
         end
     },
-    { 'roobert/search-replace.nvim', config = true },
-    { 'folke/todo-comments.nvim',    dependencies = { 'nvim-lua/plenary.nvim' },                                      config = true },
-    { 'mbbill/undotree',             config = function() vim.keymap.set("n", "<leader>u", vim.cmd.UndotreeToggle) end },
-    { 'lewis6991/gitsigns.nvim',     config = true },
-    { 'j-hui/fidget.nvim',           config = true },
-    { 'folke/lsp-colors.nvim',       config = true },
+    { 'folke/todo-comments.nvim', dependencies = { 'nvim-lua/plenary.nvim' },                                      config = true },
+    { 'mbbill/undotree',          config = function() vim.keymap.set("n", "<leader>u", vim.cmd.UndotreeToggle) end },
+    { 'lewis6991/gitsigns.nvim',  config = true },
+    { 'j-hui/fidget.nvim',        config = true },
+    { 'folke/lsp-colors.nvim',    config = true },
     {
         'rose-pine/neovim',
         name = 'rose-pine',
