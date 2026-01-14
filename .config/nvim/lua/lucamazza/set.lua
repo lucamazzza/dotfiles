@@ -29,6 +29,7 @@ vim.opt.listchars = {
 }
 vim.opt.autochdir = false
 vim.opt.autoindent = true
+vim.opt.cuc = true
 
 
 vim.g.mapleader = " "
