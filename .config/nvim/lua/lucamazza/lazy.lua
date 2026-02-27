@@ -108,6 +108,17 @@ require("lazy").setup({
     },
 
     {
+        'github/copilot.vim',
+        config = function()
+            -- Tab to accept suggestion
+            vim.g.copilot_no_tab_map = true
+            vim.api.nvim_set_keymap("i", "<TAB>", 'copilot#Accept("<CR>")', { silent = true, expr = true })
+
+            -- Disable all other default mappings
+            vim.g.copilot_assume_mapped = true
+        end
+    },
+    {
         'VonHeikemen/lsp-zero.nvim',
         branch = 'v3.x',
         dependencies = {
@@ -157,7 +168,9 @@ require("lazy").setup({
                     ['<CR>'] = cmp.mapping.confirm({ select = true }),
                     ['<C-Space>'] = cmp.mapping.complete(),
                 }),
-                sources = { { name = 'nvim_lsp' } },
+                sources = {
+                    { name = 'nvim_lsp', group_index = 2 },
+                },
             })
         end
     },
@@ -266,5 +279,92 @@ require("lazy").setup({
         ---@module 'render-markdown'
         ---@type render.md.UserConfig
         opts = {},
+    },
+    {
+        'Vonr/align.nvim',
+        branch = 'v2',
+        lazy = true,
+        init = function()
+            local NS = { noremap = true, silent = true }
+
+            -- Aligns to 1 character
+            vim.keymap.set(
+                'x',
+                'aa',
+                function()
+                    require 'align'.align_to_char({
+                        length = 1,
+                    })
+                end,
+                NS
+            )
+
+            -- Aligns to 2 characters with previews
+            vim.keymap.set(
+                'x',
+                'ad',
+                function()
+                    require 'align'.align_to_char({
+                        preview = true,
+                        length = 2,
+                    })
+                end,
+                NS
+            )
+
+            -- Aligns to a string with previews
+            vim.keymap.set(
+                'x',
+                'aw',
+                function()
+                    require 'align'.align_to_string({
+                        preview = true,
+                        regex = false,
+                    })
+                end,
+                NS
+            )
+
+            -- Aligns to a Vim regex with previews
+            vim.keymap.set(
+                'x',
+                'ar',
+                function()
+                    require 'align'.align_to_string({
+                        preview = true,
+                        regex = true,
+                    })
+                end,
+                NS
+            )
+
+            -- Example gawip to align a paragraph to a string with previews
+            vim.keymap.set(
+                'n',
+                'gaw',
+                function()
+                    local a = require 'align'
+                    a.operator(
+                        a.align_to_string,
+                        {
+                            regex = false,
+                            preview = true,
+                        }
+                    )
+                end,
+                NS
+            )
+
+            -- Example gaaip to align a paragraph to 1 character
+            vim.keymap.set(
+                'n',
+                'gaa',
+                function()
+                    local a = require 'align'
+                    a.operator(a.align_to_char)
+                end,
+                NS
+            )
+        end
     },
 })

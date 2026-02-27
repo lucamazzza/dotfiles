@@ -52,6 +52,10 @@ alias copilot="copilot --banner"
 alias bgls="open \"https://gitlab-edu.supsi.ch\""
 alias byt="open \"https://youtube.com\""
 alias bic="open \"https://icorsi.ch\""
+alias java17="export JAVA_HOME=$(/usr/libexec/java_home -v 17) && java"
+alias javac17="export JAVA_HOME=$(/usr/libexec/java_home -v 17) && javac"
+alias java22="export JAVA_HOME=$(/usr/libexec/java_home -v 22) && java"
+alias javac22="export JAVA_HOME=$(/usr/libexec/java_home -v 22) && javac"
 
 zinit cdreplay -q
 

@@ -26,3 +26,7 @@ vim.keymap.set("v", "<leader>d", "\"_d")
 -- LSP and Utilities
 vim.keymap.set("n", "<leader>f", function() vim.lsp.buf.format() end, { desc="Format file" })
 vim.keymap.set("n", "<leader>sr", ":%s/\\<<C-r><C-w>\\>/<C-r><C-w>/gI<Left><Left><Left>", { desc="Search/Replace word under cursor" })
+
+-- PDFview
+vim.keymap.set("n", "<leader>jj", "<cmd>:lua require('pdfview.renderer').next_page()<CR>", { desc = "PDFview: Next page" })
+vim.keymap.set("n", "<leader>kk", "<cmd>:lua require('pdfview.renderer').previous_page()<CR>", { desc = "PDFview: Previous page" })
