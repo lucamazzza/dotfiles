@@ -63,13 +63,34 @@ require("lazy").setup({
     -- Treesitter: syntax tree & highlighting
     {
         'nvim-treesitter/nvim-treesitter',
-        branch = 'master',
+        branch = 'main',
         lazy = false,
         build = ':TSUpdate',
         event = { "BufReadPre", "BufNewFile" },
+        config = function()
+            require('nvim-treesitter').setup()
+            local ensure_installed = { 'bash', 'c', 'cpp', 'html', 'lua', 'markdown', 'markdown_inline', 'vim', 'vimdoc',
+                'java', 'query' }
+            local already_installed = require('nvim-treesitter.config').get_installed()
+            local parsers_to_install = vim.iter(ensure_installed)
+                :filter(function(parser)
+                    return not vim.tbl_contains(already_installed, parser)
+                end)
+                :totable()
+            if #parsers_to_install > 0 then
+                require('nvim-treesitter').install(parsers_to_install)
+            end
+            vim.api.nvim_create_autocmd('FileType', {
+                callback = function()
+                    pcall(vim.treesitter.start)
+                    vim.bo.indentexpr = "v:lua.require'nvim-treesitter'.indentexpr()"
+                end,
+            })
+        end
+    },
+    {
+        "MeanderingProgrammer/treesitter-modules.nvim",
         opts = {
-            ensure_installed = { 'bash', 'c', 'cpp', 'html', 'lua', 'markdown', 'markdown_inline', 'vim', 'vimdoc', 'java', 'query' },
-            auto_install = true,
             incremental_selection = {
                 enable = true,
                 keymaps = {
@@ -79,17 +100,8 @@ require("lazy").setup({
                     node_decremental = "<bs>",
                 },
             },
-            highlight = {
-                enable = true,
-                additional_vim_regex_highlighting = true,
-            },
-            indent = { enable = true },
         },
-        config = function(_, opts)
-            require('nvim-treesitter.configs').setup(opts)
-        end
     },
-
     -- LuaLine: Bottom status line customization
     {
         'nvim-lualine/lualine.nvim',
@@ -166,7 +178,7 @@ require("lazy").setup({
         config = function()
             -- Tab to accept suggestion
             vim.g.copilot_no_tab_map = true
-            vim.api.nvim_set_keymap("i", "<TAB>", 'copilot#Accept("<CR>")', { silent = true, expr = true })
+            vim.api.nvim_set_keymap("i", "<TAB>", 'copilot#Accept("\\<Tab>")', { silent = true, expr = true })
 
             -- Disable all other default mappings
             vim.g.copilot_assume_mapped = true
@@ -189,7 +201,7 @@ require("lazy").setup({
                 local opts = { buffer = bufnr, remap = false }
                 vim.keymap.set("n", "gd", function() vim.lsp.buf.definition() end, opts, { desc = "Go to definition" })
                 vim.keymap.set("n", "K", function() vim.lsp.buf.hover() end, opts, { desc = "Hover definition" })
-                vim.keymap.set("n", "<leader>vws", function() vim.lsp.buf.workspace_symbol() end, opts,
+            vim.keymap.set("n", "<leader>vws", function() vim.lsp.buf.workspace_symbol() end, opts,
                     { desc = "Workspace symbols" })
                 vim.keymap.set("n", "<leader>vd", function() vim.diagnostic.open_float() end, opts,
                     { desc = "Float diagnostics" })
@@ -224,7 +236,7 @@ require("lazy").setup({
                 }),
                 sources = {
                     { name = 'nvim_lsp', group_index = 2 },
-                    { name = 'luasnip', group_index = 2 },
+                    { name = 'luasnip',  group_index = 2 },
                 },
             })
         end
@@ -298,7 +310,14 @@ require("lazy").setup({
             end
         end
     },
-    { 'kosayoda/nvim-lightbulb', config = function() require("nvim-lightbulb").setup({ autocmd = { enabled = true } }) end },
+    {
+        'kosayoda/nvim-lightbulb',
+        config = function()
+            require("nvim-lightbulb").setup(
+                { autocmd = { enabled = true } }
+            )
+        end
+    },
     {
         'yamatsum/nvim-cursorline',
         config = function()
@@ -308,7 +327,7 @@ require("lazy").setup({
             }
         end
     },
-    { 'prichrd/netrw.nvim',      config = true },
+    { 'prichrd/netrw.nvim',       config = true },
     {
         "nvim-neo-tree/neo-tree.nvim",
         branch = "v3.x",
