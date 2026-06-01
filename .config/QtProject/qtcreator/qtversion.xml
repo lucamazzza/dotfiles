@@ -1,7 +1,33 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE QtCreatorQtVersions>
-<!-- Written by QtCreator 18.0.2, 2026-02-18T19:28:45. -->
+<!-- Written by QtCreator 19.0.0, 2026-05-02T12:05:51. -->
 <qtcreator>
+ <data>
+  <variable>QtVersion.0</variable>
+  <valuemap type="QVariantMap">
+   <value type="QString" key="DetectionSource.id">SDK.qt.qt6.6110.clang_64</value>
+   <value type="int" key="DetectionSource.type">1</value>
+   <value type="int" key="Id">2</value>
+   <value type="QString" key="Name">Qt %{Qt:Version} for macOS</value>
+   <value type="QString" key="QMakePath">/Users/lucamazza/Qt/6.11.0/macos/bin/qmake</value>
+   <value type="QString" key="QtVersion.Type">Qt4ProjectManager.QtVersion.Desktop</value>
+   <value type="QString" key="autodetectionSource">SDK.qt.qt6.6110.clang_64</value>
+   <value type="bool" key="isAutodetected">true</value>
+  </valuemap>
+ </data>
+ <data>
+  <variable>QtVersion.1</variable>
+  <valuemap type="QVariantMap">
+   <value type="QString" key="DetectionSource.id">SDK.qt.qt6.6110.wasm_singlethread</value>
+   <value type="int" key="DetectionSource.type">1</value>
+   <value type="int" key="Id">3</value>
+   <value type="QString" key="Name">Qt %{Qt:Version} WebAssembly (single-threaded)</value>
+   <value type="QString" key="QMakePath">/Users/lucamazza/Qt/6.11.0/wasm_singlethread/bin/qmake</value>
+   <value type="QString" key="QtVersion.Type">Qt4ProjectManager.QtVersion.WebAssembly</value>
+   <value type="QString" key="autodetectionSource">SDK.qt.qt6.6110.wasm_singlethread</value>
+   <value type="bool" key="isAutodetected">true</value>
+  </valuemap>
+ </data>
  <data>
   <variable>Version</variable>
   <value type="int">1</value>

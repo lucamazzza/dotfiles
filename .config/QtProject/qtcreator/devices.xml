@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE QtCreatorDevices>
-<!-- Written by QtCreator 18.0.2, 2026-02-26T21:47:57. -->
+<!-- Written by QtCreator 19.0.0, 2026-05-20T13:33:55. -->
 <qtcreator>
  <data>
   <variable>DeviceManager</variable>
@@ -14,6 +14,7 @@
     <valuemap type="QVariantMap">
      <value type="int" key="Authentication">0</value>
      <value type="QString" key="ClientOsType">Mac</value>
+     <value type="QString" key="DockerDeviceClangDExecutable">/usr/bin/clangd</value>
      <valuemap type="QVariantMap" key="ExtraData">
       <value type="bool" key="RemoteLinux.SshForwardDebugServerPort">false</value>
       <value type="bool" key="RemoteLinux.SupportsRSync">true</value>
@@ -26,6 +27,9 @@
      <value type="QString" key="KeyFile"></value>
      <value type="int" key="Origin">1</value>
      <value type="QString" key="OsType">Desktop</value>
+     <value type="QString" key="QmlsceneKey">/Users/lucamazza/Qt/6.11.0/macos/bin/qml</value>
+     <value type="QString" key="RsyncExecutable">/usr/bin/rsync</value>
+     <value type="QString" key="SshExecutable">/usr/bin/ssh</value>
      <value type="int" key="SshPort">22</value>
      <value type="int" key="Timeout">10</value>
      <value type="int" key="Type">0</value>

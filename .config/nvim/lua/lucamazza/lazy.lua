@@ -1,3 +1,4 @@
+-- HEADER
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not vim.loop.fs_stat(lazypath) then
     vim.fn.system({
@@ -6,12 +7,60 @@ if not vim.loop.fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(lazypath)
 
+-- INCLUDE PLUGINS
 require("lazy").setup({
-    { 'nvim-lua/plenary.nvim' },
+
     {
-        'goolord/alpha-nvim',
-        config = function() require('lucamazza.alpha') end
+        "L3MON4D3/LuaSnip",
+        lazy = true,
+        build = "make install_jsregexp",
+        dependencies = {
+            {
+                "rafamadriz/friendly-snippets",
+            },
+        },
+        opts = {
+            history = true,
+            delete_check_events = "TextChanged",
+        },
+        require("lucamazza.luasnip"),
     },
+    {
+        "rafamadriz/friendly-snippets",
+    },
+    { "saadparwaiz1/cmp_luasnip" },
+    {
+        "hrsh7th/nvim-cmp",
+        optional = true,
+        dependencies = { "saadparwaiz1/cmp_luasnip" },
+        opts = function(_, opts)
+            opts.snippet = {
+                expand = function(args)
+                    require("luasnip").lsp_expand(args.body)
+                end,
+            }
+            opts.sources = opts.sources or {}
+            table.insert(opts.sources, { name = "luasnip" })
+        end,
+        -- stylua: ignore
+        keys = {
+            { "<tab>",   function() require("luasnip").jump(1) end,  mode = "s" },
+            { "<s-tab>", function() require("luasnip").jump(-1) end, mode = { "i", "s" } },
+        },
+    },
+    {
+        "saghen/blink.cmp",
+        optional = true,
+        opts = {
+            snippets = {
+                preset = "luasnip",
+            },
+        },
+    },
+    -- Plenary: lua boilerplate simplification library
+    { 'nvim-lua/plenary.nvim' },
+
+    -- Treesitter: syntax tree & highlighting
     {
         'nvim-treesitter/nvim-treesitter',
         branch = 'master',
@@ -32,7 +81,7 @@ require("lazy").setup({
             },
             highlight = {
                 enable = true,
-                additional_vim_regex_highlighting = false,
+                additional_vim_regex_highlighting = true,
             },
             indent = { enable = true },
         },
@@ -40,6 +89,8 @@ require("lazy").setup({
             require('nvim-treesitter.configs').setup(opts)
         end
     },
+
+    -- LuaLine: Bottom status line customization
     {
         'nvim-lualine/lualine.nvim',
         dependencies = { 'nvim-tree/nvim-web-devicons' },
@@ -96,6 +147,8 @@ require("lazy").setup({
             }
         end
     },
+
+    -- Rosé Pine: cool theme!
     {
         'rose-pine/neovim',
         name = 'rose-pine',
@@ -107,6 +160,7 @@ require("lazy").setup({
         end
     },
 
+    -- GitHub Copilot: ai copilot assistant integration
     {
         'github/copilot.vim',
         config = function()
@@ -170,17 +224,21 @@ require("lazy").setup({
                 }),
                 sources = {
                     { name = 'nvim_lsp', group_index = 2 },
+                    { name = 'luasnip', group_index = 2 },
                 },
             })
         end
     },
+
+    -- Workspace: use tmux to keep workspaces on speed dial
     {
         'sanathks/workspace.nvim',
         config = function()
             local workspace = require("workspace")
             workspace.setup({
                 workspaces = {
-                    { name = "Work",     path = "~/Projects",         keymap = { "<leader>w" } },
+                    { name = "Projects", path = "~/Projects",         keymap = { "<leader>p" } },
+                    { name = "Work",     path = "~/Work",             keymap = { "<leader>w" } },
                     { name = "School",   path = "~/School",           keymap = { "<leader>s" } },
                     { name = "Archive",  path = "~/Archive",          keymap = { "<leader>a" } },
                     { name = "Dotfiles", path = "~/dotfiles/.config", keymap = { "<leader>z" } },
@@ -189,6 +247,8 @@ require("lazy").setup({
             vim.keymap.set('n', '<leader>ts', workspace.tmux_sessions)
         end
     },
+
+    -- Harpoon: catch files on the hook
     {
         'theprimeagen/harpoon',
         config = function()
@@ -208,6 +268,8 @@ require("lazy").setup({
             vim.keymap.set("n", "<C-s>", function() ui.nav_file(4) end)
         end
     },
+
+    -- Telescope: the Neovim search engine
     {
         'nvim-telescope/telescope.nvim',
         dependencies = { 'nvim-lua/plenary.nvim' },
@@ -246,7 +308,7 @@ require("lazy").setup({
             }
         end
     },
-    { 'prichrd/netrw.nvim',       config = true },
+    { 'prichrd/netrw.nvim',      config = true },
     {
         "nvim-neo-tree/neo-tree.nvim",
         branch = "v3.x",

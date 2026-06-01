@@ -1,0 +1,133 @@
+# Common recent settings file for Wireshark 4.6.5.
+#
+# This file is regenerated each time Wireshark is quit
+# and when changing configuration profile.
+# So be careful, if you want to make manual changes here.
+
+######## Recent capture files (latest last), cannot be altered through command line ########
+
+recent.capture_file: /Users/lucamazza/Downloads/Wireshark-tutorial-identifying-hosts-and-users-5-pcaps/Wireshark-tutorial-identifying-hosts-and-users-1-of-5.pcap
+recent.capture_file: /Users/lucamazza/Downloads/Wireshark-tutorial-identifying-hosts-and-users-5-pcaps/Wireshark-tutorial-identifying-hosts-and-users-3-of-5.pcap
+recent.capture_file: /Users/lucamazza/Downloads/Compromised server activity showing log4j attempts.pcap
+
+######## Recent capture filters (latest first), cannot be altered through command line ########
+
+
+######## Recent display filters (latest last), cannot be altered through command line ########
+
+recent.display_filter: sip
+
+# Main window geometry.
+# Decimal numbers.
+gui.geometry_main_x: 12
+gui.geometry_main_y: 43
+gui.geometry_main_width: 3416
+gui.geometry_main_height: 1357
+
+# Main window maximized.
+# true or false (case-insensitive).
+gui.geometry_main_maximized: false
+
+# Main window geometry state.
+# Hex byte string.
+gui.geometry_main: 01d9d0cb000300000000000c0000002b00000d63000005930000000c0000004700000d630000059300000000000000000d700000000c0000004700000d6300000593
+
+# Leftalign Action Buttons.
+# true or false (case-insensitive).
+gui.geometry_leftalign_actions: false
+
+# Last used Configuration Profile.
+gui.last_used_profile: Default
+
+# Number of packets or events to check for automatic profile switching.
+# Decimal number. Zero disables switching.
+#gui.profile_switch_check_count: 1000
+
+# Warn if running with elevated permissions (e.g. as root).
+# true or false (case-insensitive).
+privs.warn_if_elevated: true
+
+# Warn if Wireshark is unable to capture.
+# true or false (case-insensitive).
+sys.warn_if_no_capture: true
+
+# Find packet search in.
+# One of: PACKET_LIST, PACKET_DETAILS, PACKET_BYTES
+gui.search_in: PACKET_LIST
+
+# Find packet character set.
+# One of: NARROW_AND_WIDE, NARROW, WIDE
+gui.search_char_set: NARROW_AND_WIDE
+
+# Find packet case sensitive search.
+# true or false (case-insensitive).
+gui.search_case_sensitive: false
+
+# Find packet search reverse direction.
+# true or false (case-insensitive).
+gui.search_reverse_dir: false
+
+# Find packet search multiple occurrences.
+# true or false (case-insensitive).
+gui.search_multiple_occurs: false
+
+# Find packet search type.
+# One of: DISPLAY_FILTER, HEX_VALUE, STRING, REGEX
+gui.search_type: DISPLAY_FILTER
+
+# Welcome page sidebar Learn section visible.
+# true or false (case-insensitive).
+gui.welcome_page.sidebar.learn_visible: true
+
+# Welcome page sidebar Tips section visible.
+# true or false (case-insensitive).
+gui.welcome_page.sidebar.tips_visible: true
+
+# Welcome page sidebar Tips event slides.
+# true or false (case-insensitive).
+gui.welcome_page.sidebar.tips_events: true
+
+# Welcome page sidebar Tips sponsorship slides.
+# true or false (case-insensitive).
+gui.welcome_page.sidebar.tips_sponsorship: true
+
+# Welcome page sidebar Tips tip-of-the-day slides.
+# true or false (case-insensitive).
+gui.welcome_page.sidebar.tips_tips: true
+
+# Welcome page sidebar Tips slide auto-advance interval in seconds.
+gui.welcome_page.sidebar.tips_interval: 8
+
+# Geometry and maximized state of PacketDialog window.
+# Decimal integers.
+gui.geom.PacketDialog.x: 1415
+gui.geom.PacketDialog.y: 167
+gui.geom.PacketDialog.width: 1018
+gui.geom.PacketDialog.height: 1085
+# true or false (case-insensitive).
+gui.geom.PacketDialog.maximized: false
+# Qt Geometry State (hex byte string).
+gui.geom.PacketDialog.qt_geometry: 01d9d0cb0003000000000587000000a700000980000004ff00000587000000c300000980000004ff00000000000000000d7000000587000000c300000980000004ff
+
+# Geometry and maximized state of PreferencesDialog window.
+# Decimal integers.
+gui.geom.PreferencesDialog.x: 523
+gui.geom.PreferencesDialog.y: 484
+gui.geom.PreferencesDialog.width: 680
+gui.geom.PreferencesDialog.height: 554
+# true or false (case-insensitive).
+gui.geom.PreferencesDialog.maximized: false
+# Qt Geometry State (hex byte string).
+gui.geom.PreferencesDialog.qt_geometry: 01d9d0cb000300000000020b000001e4000004b2000004290000020b00000200000004b20000042900000000000000000d700000020b00000200000004b200000429
+
+# Custom colors.
+# List of custom colors selected in Qt color picker.
+gui.custom_colors: 
+	"ffffffff", "ffffffff",
+	"ffffffff", "ffffffff",
+	"ffffffff", "ffffffff",
+	"ffffffff", "ffffffff",
+	"ffffffff", "ffffffff",
+	"ffffffff", "ffffffff",
+	"ffffffff", "ffffffff",
+	"ffffffff", "ffffffff"

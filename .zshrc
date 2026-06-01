@@ -41,14 +41,14 @@ zstyle ':completion:*' menu no
 zstyle ':fzf-tab:complete:cd:*' fzf-preview 'ls --color $realpath'
 zstyle ':fzf-tab:complete:__zoxide_z:*' fzf-preview 'ls --color $realpath'
 
-alias ls='ls --color'
-alias ll='ls -la --color'
+alias ls='lsd'
+alias ll='lsd -la'
+alias lt='lsd --tree'
 alias gcc='gcc -Wall -Wextra'
 alias gst='git status -s'
 alias tree='tree -C'
 alias cm="mkdir -p build && cd build && cmake .. && make && cd .."
 alias cmclean="mkdir -p build && cd build && make clean && cd .."
-alias copilot="copilot --banner"
 alias bgls="open \"https://gitlab-edu.supsi.ch\""
 alias byt="open \"https://youtube.com\""
 alias bic="open \"https://icorsi.ch\""
@@ -95,3 +95,4 @@ case ":$PATH:" in
   *) export PATH="$PNPM_HOME:$PATH" ;;
 esac
 # pnpm end
+export PATH="/Library/TeX/texbin:$PATH"
